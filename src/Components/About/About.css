@@ -1,0 +1,22 @@
+.About .container {
+	max-width: 700px;
+	margin: auto;
+}
+
+.About .title h3 {
+	font-size: 3em;
+	display: inline-block;
+	padding: .3em 0;
+	color: #607d8b;
+	border-bottom: 1px double #ff666c;
+}
+
+.About .content {
+	margin-top: 80px;
+}
+.About .content p {
+	padding: 2em;
+	font-size: 1.3em;
+	line-height: 2em;
+	color: #607d8b;
+}

@@ -1,0 +1,73 @@
+.AdminLogin {
+	height: 100vh;
+	overflow-y: auto;
+}
+
+.AdminLogin .title {
+	display: block;
+	text-align: center;
+	color: rgba(99, 169, 191, 0.95);
+	text-transform: uppercase;
+}
+
+.AdminLogin .login-wrap hr {
+	border: 1px solid rgba(0, 0, 0, .03);
+	margin: 15px auto 30px;
+	width: 10%;
+}
+
+.AdminLogin .login-wrap {
+	max-width: 400px;
+	margin: 150px auto;
+	padding: 2.5em 3em;
+	background-color: #333344;
+	border-radius: 4px;
+	box-shadow: 0 20px 50px -10px rgba(0, 0, 0, .4);
+	border-top: 2px solid rgba(100, 113, 191, 0.1);
+}
+
+.AdminLogin .login-wrap form > input::placeholder {
+	color: #607d8b;
+}
+
+.AdminLogin .login-wrap form > input {
+	display: block;
+	width: 100%;
+	background-color: transparent;
+	border: 0;
+	border-bottom: 1px solid #ccc;
+	color: #eee;
+	padding: .7em 1em;
+	margin-bottom: 20px;
+	font-size: .99em;
+}
+
+.AdminLogin .login-wrap form > input:disabled {
+	color: #aaa;
+	border-bottom: 1px solid #999;
+}
+
+.AdminLogin .login-wrap form > button {
+	margin: 50px auto 20px;
+}
+
+.AdminLogin .login-wrap .error {
+	background-color: rgba(255, 89, 107, 0.6);
+	color: #eee;
+	padding: .7em 1em;
+	border-radius: 2px;
+	margin: 30px auto 30px;
+	font-size: .9em;
+}
+
+@media (max-width: 400px) {
+
+	.AdminLogin .login-wrap {
+		max-width: 400px;
+		margin: 150px auto;
+		padding: 4em 2em;
+		background-color: #333344;
+		border-radius: 0;
+	}
+
+}

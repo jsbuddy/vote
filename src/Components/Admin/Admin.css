@@ -1,0 +1,179 @@
+.admin {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow-y: auto;
+}
+
+.admin .top {
+	background: #334;
+	min-height: 100px;
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid #222;
+	padding: 1em;
+}
+
+.admin .top form {
+	flex: 1;
+}
+
+.admin .top form .inline {
+	display: flex;
+	justify-content: center;
+}
+
+.admin .top form .inline input {
+	border: 0;
+	background-color: #f9f9f9;
+	padding: .7em 1em;
+	border-radius: 2px;
+	margin-right: 20px;
+	max-width: 300px;
+	font-size: .95em;
+}
+
+.admin .top form .inline button {
+	border: 0;
+	background-color: rgb(85, 85, 184);
+	color: #fff;
+	padding: .7em 1em;
+	border-radius: 3px;
+	cursor: pointer;
+	font-size: .95em;
+	transition: all .15s ease-in-out;
+}
+
+.admin .top form .inline button:active {
+	transform: translateY(2px)
+}
+
+.admin .bottom {
+	flex: 1;
+}
+
+.admin .bottom .new-contestants {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.admin .bottom .new-contestant {
+	padding: 2em 2em 1em;
+	animation: small-scale-in .2s ease-in-out forwards;
+}
+
+.admin .bottom .new-contestant .content {
+	border: 1px solid #eee;
+	background: #fff;
+	padding: 1em 1em .8em;
+	max-width: 200px;
+	box-shadow: 0 10px 20px -10px rgba(0, 0, 0, .1);
+}
+
+.admin .bottom .new-contestant .content .name {
+	margin-bottom: 10px;
+	/*margin-bottom: 20px;*/
+}
+
+.admin .bottom .new-contestant .content .name input[type="text"],
+.admin .bottom .new-contestant .content .name input[type="url"] {
+	display: inline-block;
+	background: #eee;
+	padding: .8em 1em;
+	font-size: .95em;
+	width: 100%;
+	border: 0;
+	border-radius: 2px;
+}
+
+.admin .or {
+	text-align: center;
+	padding: 3px;
+	color: #607d8b;
+	font-size: .8em;
+	display: none;
+}
+
+input[type="file"] + label {
+	display: none;
+	/*display: inline-block;*/
+	background: #f5f5f5;
+	padding: .5em 1em;
+	width: 100%;
+	border-radius: 2px;
+	font-size: .95em;
+	cursor: pointer;
+	overflow: hidden;
+	word-wrap: normal;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	color: #888888;
+}
+
+input[type="file"]:focus + label,
+input[type="file"] + label:hover {
+	background: #ddd;
+	border: 0;
+}
+
+input[type="file"] {
+	position: absolute;
+	width: 0.1px;
+	height: 0.1px;
+	overflow: hidden;
+	z-index: -1;
+	border: 0;
+	opacity: 0;
+}
+
+.admin .bottom .create-competition {
+	text-align: center;
+	padding: 2em;
+}
+
+.admin .bottom .create-competition button {
+	transition: all .15s ease-in-out;
+	box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+	margin: auto;
+}
+
+.admin .bottom .create-competition button:active {
+	transform: translateY(3px);
+}
+
+.admin .bottom .alert {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 2em 1em 1em;
+}
+
+.admin .bottom .alert .content {
+	text-align: center;
+	color: #fff;
+	font-size: .8em;
+	animation: small-scale-in .2s ease-in-out forwards;
+	border-radius: 3px;
+	padding: 1em 2em;
+	box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+}
+
+.admin .bottom .alert.error .content {
+	background-color: rgb(180, 79, 79);
+}
+
+.admin .bottom .alert.success .content {
+	background-color: #629c60;
+}
+
+@media (max-width: 850px) {
+	.admin .top form .inline {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.admin .top form .inline > input {
+		margin: 0 0 10px;
+	}
+}

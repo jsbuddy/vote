@@ -1,0 +1,216 @@
+POST http://localhost:2000/api/auth/register
+Accept:*/*
+Cache-Control:no-cache
+
+{    " firstName": "a",     "lastName": "aa",     "email": "aaa",     "password": "aaaa"}
+
+<> 2018-03-31T104610.422.json
+
+###
+
+POST http://localhost:2000/api/auth/register
+Accept:*/*
+Cache-Control:no-cache
+
+{     firstName: 'a',     lastName: 'aa',     email: 'aaa',     password: 'aaaa' }
+
+<> 2018-03-31T104519.422.json
+
+###
+
+POST http://localhost:2000/api/auth/register
+Accept:*/*
+Cache-Control:no-cache
+
+<> 2018-03-31T104424.422.json
+
+###
+
+POST http://localhost:2000/api/auth/register
+Accept:*/*
+Cache-Control:no-cache
+
+<> 2018-03-31T104414.422.json
+
+###
+
+POST http://localhost:2000/api/auth/register
+Accept:*/*
+Cache-Control:no-cache
+
+<> 2018-03-31T104317.422.json
+
+###
+
+POST http://localhost:2000/auth/register
+Accept:*/*
+Cache-Control:no-cache
+
+<> 2018-03-31T104304.404.html
+
+###
+
+POST http://localhost:2000/auth
+Accept:*/*
+Cache-Control:no-cache
+
+<> 2018-03-31T104257.404.html
+
+###
+
+POST http://localhost:2000/auth
+Accept:*/*
+Cache-Control:no-cache
+
+<> 2018-03-31T104232.404.html
+
+###
+
+POST http://localhost:2000/register
+Accept:*/*
+Cache-Control:no-cache
+
+<> 2018-03-31T104227.404.html
+
+###
+
+POST http://localhost:2000/register
+Accept:*/*
+Cache-Control:no-cache
+
+{     "firstName": 'Jude' }
+
+###
+
+POST http://localhost:2000/register
+Accept:*/*
+Cache-Control:no-cache
+
+###
+
+POST http://localhost:2000/register
+Accept:*/*
+Cache-Control:no-cache
+
+###
+
+POST http://localhost:2000/register
+Accept:*/*
+Cache-Control:no-cache
+
+<> 2018-03-31T031928.404.html
+
+###
+
+POST http://localhost:2000/register
+Accept:*/*
+Cache-Control:no-cache
+
+<> 2018-03-31T031722.404.html
+
+###
+
+POST http://localhost:2000/register
+Accept:*/*
+Cache-Control:no-cache
+
+<> 2018-03-31T031521.415.html
+
+###
+
+GET http://localhost:2000/api
+Accept:*/*
+Cache-Control:no-cache
+
+<> 2018-03-31T031238.200.json
+
+###
+
+GET http://localhost:2000/api
+Accept:*/*
+Cache-Control:no-cache
+
+<> 2018-03-30T062609.200.json
+
+###
+
+POST http://localhost:2000/api
+Accept:*/*
+Cache-Control:no-cache
+
+{     name: 'Competition 1',     deadline: '333' }
+
+<> 2018-03-30T062602.404.html
+
+###
+
+POST http://localhost:2000/competition
+Accept:*/*
+Cache-Control:no-cache
+
+{     name: 'Competition 1',     deadline: '333' }
+
+<> 2018-03-30T062513.404.html
+
+###
+
+POST http://localhost:2000/competition
+Accept:*/*
+Cache-Control:no-cache
+
+{     name: 'Competition 1',     deadline: '333' }
+
+<> 2018-03-30T114334.200.json
+
+###
+
+POST http://localhost:2000/competition
+Accept:*/*
+Cache-Control:no-cache
+
+{     name: 'Competition 1',     deadline: '333' }
+
+<> 2018-03-30T114300.200.json
+
+###
+
+POST http://localhost:2000/competition
+Accept:*/*
+Cache-Control:no-cache
+
+<> 2018-03-30T114201.200.json
+
+###
+
+POST http://localhost:2000/competition
+Accept:*/*
+Cache-Control:no-cache
+
+<> 2018-03-30T034738.200.json
+
+###
+
+GET http://localhost:2000/competition
+Accept:*/*
+Cache-Control:no-cache
+
+<> 2018-03-30T034734.404.html
+
+###
+
+GET http://localhost:2000
+Accept:*/*
+Cache-Control:no-cache
+
+<> 2018-03-30T034726.404.html
+
+###
+
+GET http://localhost:2000
+Accept:*/*
+Cache-Control:no-cache
+
+<> 2018-03-30T034648.404.html
+
+###
+
