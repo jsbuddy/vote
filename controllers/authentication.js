@@ -2,20 +2,20 @@ const jwt = require('jsonwebtoken'),
 	User = require('../models/user'),
 	config = require('../config/main');
 
-exports.confirm = (req, res, next) => {
-	const token = req.headers['authorization'].split(' ')[1];
+exports.confirm = (req, res) => {
+	const token = req.headers[ 'authorization' ].split(' ')[ 1 ];
 	jwt.verify(token, config.secret, (err, decoded) => {
-		if (err) return res.status(401).json({ success: false, message: 'Unauthorized '});
+		if (err) return res.status(401).json({ success: false, message: 'Unauthorized ' });
 		User.findById(decoded._id).exec()
 			.then(user => {
 				if (user) res.status(200).json({ success: true, user });
-				else res.status(401).json({ success: false, message: 'Unauthorized '})
+				else res.status(401).json({ success: false, message: 'Unauthorized ' })
 			})
-			.catch(err => next(err))
+			.catch(err => res.status(500).json({ success: false, err }))
 	})
 };
 
-exports.login = (req, res, next) => {
+exports.login = (req, res) => {
 	const { email, password } = req.body;
 	if (isEmpty(email) || isEmpty(password)) return res.status(422).json({
 		success: false,
@@ -36,11 +36,11 @@ exports.login = (req, res, next) => {
 				} else res.status(422).json({ success: false, message: 'Incorrect Password' })
 			} else res.status(422).json({ success: false, message: 'Incorrect Credentials' })
 		})
-		.catch(err => next(err))
+		.catch(err => res.status(500).json({ success: false, err }))
 
 };
 
-exports.register = (req, res, next) => {
+exports.register = (req, res) => {
 	const { email, firstName, lastName, password } = req.body;
 
 	if (isEmpty(email) || isEmpty(password)) return res.status(422).json({
@@ -73,7 +73,7 @@ exports.register = (req, res, next) => {
 					message: 'Email address already in use'
 				});
 			}
-			next(err)
+			res.status(500).json({ success: false, err })
 		});
 };
 
@@ -96,5 +96,3 @@ function isEmpty (arg) {
 	if (arg === undefined || arg === null) return true;
 	return arg.toString().trim() === '';
 }
-
-//TODO next(err)

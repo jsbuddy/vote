@@ -6,17 +6,17 @@ const http = require('http'),
 	bodyParser = require('body-parser'),
 	config = require('./config/main'),
 	router = require('./controllers/router'),
-	path = require("path");
+	path = require("path"),
+	dev = app.get('env') === 'development';
 
-mongoose.connect(config.database.uri, err =>
-	console.log(err ? err : 'Database: Connected'));
+mongoose.connect(dev ? config.database.uri.dev : config.database.uri.prod, err =>
+	console.log(err ? err.message : 'Database: Connected'));
 mongoose.Promise = global.Promise;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.resolve(__dirname, 'build')));
 
-const dev = app.get('env') === 'development';
 if (dev) {
 	app.use(morgan('dev'));
 } else {

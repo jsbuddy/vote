@@ -1,6 +1,6 @@
 const Competition = require('../models/competition');
 
-module.exports.create = (req, res, next) => {
+module.exports.create = (req, res) => {
 	const { name, deadline, contestants } = req.body;
 
 	if (isEmpty(name) || isEmpty(deadline) || [ ...contestants ].length < 2) return res.status(422).json({
@@ -22,18 +22,18 @@ module.exports.create = (req, res, next) => {
 					message: 'Competition with that name already exists'
 				});
 			}
-			next(err)
+			res.status(500).json({ success: false, err });
 		})
 };
 
-module.exports.getAllCompetitions = (req, res, next) => {
+module.exports.getAllCompetitions = (req, res) => {
 	const remoteAddress = req.ip;
 	Competition.find().exec()
 		.then(competitions => res.status(200).json({ success: true, competitions, remoteAddress }))
-		.catch(err => next(err))
+		.catch(err => res.status(500).json({ success: false, err }))
 };
 
-module.exports.vote = (req, res, next) => {
+module.exports.vote = (req, res) => {
 	const { competitionId, contestantId, browserFingerprint } = req.body;
 	const remoteAddress = req.ip;
 	let voted = false;
@@ -79,7 +79,7 @@ module.exports.vote = (req, res, next) => {
 			const vote = (voted ? competition.votes[ competition.votes.length - 1 ] : storedVote) || null;
 			res.status(200).json({ success: voted, competition, vote, ended });
 		})
-		.catch(err => next(err));
+		.catch(err => res.status(500).json({ success: false, err }));
 };
 
 function isEmpty (arg) {
